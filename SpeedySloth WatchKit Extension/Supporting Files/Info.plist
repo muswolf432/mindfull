@@ -25,7 +25,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>com.example.apple-samplecode.SpeedySloth.watchkitapp</string>
+			<string>Ai.Nirvana.watchkitapp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
@@ -35,9 +35,12 @@
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>Workouts tracked by SpeedySloth on Apple Watch will be saved to HealthKit.</string>
 	<key>UIBackgroundModes</key>
-	<array/>
+	<array>
+		<string>audio</string>
+	</array>
 	<key>WKBackgroundModes</key>
 	<array>
+		<string>mindfulness</string>
 		<string>workout-processing</string>
 	</array>
 	<key>WKWatchOnly</key>

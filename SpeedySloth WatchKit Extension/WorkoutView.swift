@@ -17,19 +17,24 @@ struct WorkoutView: View {
                 .font(Font.system(size: 26, weight: .semibold, design: .default).monospacedDigit())
                 
             // The active calories burned.
-            Text("\(workoutSession.activeCalories, specifier: "%.1f") cal")
+            Text("\(workoutSession.activeCalories, specifier: "%.0f") cal")
             .font(Font.system(size: 26, weight: .regular, design: .default).monospacedDigit())
             .frame(alignment: .leading)
             
             // The current heartrate.
-            Text("\(workoutSession.heartrate, specifier: "%.1f") BPM")
+            Text("\(workoutSession.heartrate, specifier: "%.0f") BPM")
             .font(Font.system(size: 26, weight: .regular, design: .default).monospacedDigit())
             
             // The distance traveled.
-            Text("\(workoutSession.distance, specifier: "%.1f") m")
+            Text("\(workoutSession.distance, specifier: "%.0f") m")
             .font(Font.system(size: 26, weight: .regular, design: .default).monospacedDigit())
             Spacer().frame(width: 1, height: 8, alignment: .leading)
-             
+            
+            // The HRV
+            Text("\(workoutSession.HRV, specifier: "%.0f") ms")
+                .onAppear(perform: {
+                    WKInterfaceDevice.current().play(.click)
+                })
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
     }
@@ -43,6 +48,7 @@ struct WorkoutView: View {
     func elapsedTimeString(elapsed: (h: Int, m: Int, s: Int)) -> String {
         return String(format: "%d:%02d:%02d", elapsed.h, elapsed.m, elapsed.s)
     }
+    
 }
 
 struct WorkoutView_Previews: PreviewProvider {

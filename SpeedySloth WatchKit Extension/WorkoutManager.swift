@@ -27,6 +27,7 @@ class WorkoutManager: NSObject, ObservableObject {
     @Published var activeCalories: Double = 0
     @Published var distance: Double = 0
     @Published var elapsedSeconds: Int = 0
+    @Published var HRV: Double = 0
     
     // The app's workout state.
     var running: Bool = false
@@ -60,14 +61,19 @@ class WorkoutManager: NSObject, ObservableObject {
         /// - Tag: RequestAuthorization
         // The quantity type to write to the health store.
         let typesToShare: Set = [
-            HKQuantityType.workoutType()
+            HKQuantityType.workoutType(),
+            HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.mindfulSession)!,
+            HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!
         ]
         
         // The quantity types to read from the health store.
         let typesToRead: Set = [
             HKQuantityType.quantityType(forIdentifier: .heartRate)!,
             HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
-            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
+            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+            HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
+            HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.mindfulSession)!
+            
         ]
         
         // Request authorization for those quantity types.
@@ -80,8 +86,7 @@ class WorkoutManager: NSObject, ObservableObject {
     func workoutConfiguration() -> HKWorkoutConfiguration {
         /// - Tag: WorkoutConfiguration
         let configuration = HKWorkoutConfiguration()
-        configuration.activityType = .running
-        configuration.locationType = .outdoor
+        configuration.activityType = .mindAndBody
         
         return configuration
     }
@@ -160,6 +165,7 @@ class WorkoutManager: NSObject, ObservableObject {
             self.activeCalories = 0
             self.heartrate = 0
             self.distance = 0
+            self.HRV = 100
         }
     }
     
@@ -186,6 +192,12 @@ class WorkoutManager: NSObject, ObservableObject {
                 let value = statistics.sumQuantity()?.doubleValue(for: meterUnit)
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 self.distance = roundedValue
+                return
+            case HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN):
+                let HRVUnit = HKUnit.init(from: "ms")
+                let value = statistics.mostRecentQuantity()?.doubleValue(for: HRVUnit)
+                let roundedValue = Double( round( 1 * value! ) / 1 )
+                self.HRV = roundedValue
                 return
             default:
                 return

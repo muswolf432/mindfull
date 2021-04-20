@@ -15,11 +15,15 @@ struct StartView: View {
     let startAction: (() -> Void)? // The start action callback.
     
     var body: some View {
+        VStack {
         RunButton(action: {
             self.startAction!() // FixMe!
         }).onAppear() {
             // Request HealthKit store authorization.
             self.workoutSession.requestAuthorization()
+        }
+        // The HRV
+        Text("\(workoutSession.HRV, specifier: "%.0f") ms")
         }
     }
 }
