@@ -11,7 +11,7 @@
 		E0EDD79D2489AB54002FF6D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD79C2489AB54002FF6D7 /* Assets.xcassets */; };
 		E0EDD7A42489AB54002FF6D7 /* mindfull WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E0EDD7A32489AB54002FF6D7 /* mindfull WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E0EDD7A92489AB54002FF6D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7A82489AB54002FF6D7 /* ContentView.swift */; };
-		E0EDD7AB2489AB54002FF6D7 /* SpeedySlothApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7AA2489AB54002FF6D7 /* SpeedySlothApp.swift */; };
+		E0EDD7AB2489AB54002FF6D7 /* mindfullApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7AA2489AB54002FF6D7 /* mindfullApp.swift */; };
 		E0EDD7AD2489AB55002FF6D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD7AC2489AB55002FF6D7 /* Assets.xcassets */; };
 		E0EDD7B02489AB55002FF6D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD7AF2489AB55002FF6D7 /* Preview Assets.xcassets */; };
 		E0EDD7C22489ACAF002FF6D7 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EDD7C12489ACAF002FF6D7 /* HealthKit.framework */; };
@@ -75,11 +75,11 @@
 		E0EDD79E2489AB54002FF6D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0EDD7A32489AB54002FF6D7 /* mindfull WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "mindfull WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0EDD7A82489AB54002FF6D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E0EDD7AA2489AB54002FF6D7 /* SpeedySlothApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedySlothApp.swift; sourceTree = "<group>"; };
+		E0EDD7AA2489AB54002FF6D7 /* mindfullApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mindfullApp.swift; sourceTree = "<group>"; };
 		E0EDD7AC2489AB55002FF6D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0EDD7AF2489AB55002FF6D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E0EDD7B12489AB55002FF6D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0EDD7BF2489ACAF002FF6D7 /* SpeedySloth WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SpeedySloth WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		E0EDD7BF2489ACAF002FF6D7 /* mindfull WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "mindfull WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		E0EDD7C12489ACAF002FF6D7 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		E0EDD7C42489AE71002FF6D7 /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
 		E0EDD7C62489AEAB002FF6D7 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
@@ -123,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				6753D2E9594A89A77A791DC7 /* README.md */,
-				E0EDD79B2489AB53002FF6D7 /* SpeedySloth WatchKit App */,
-				E0EDD7A72489AB54002FF6D7 /* SpeedySloth WatchKit Extension */,
+				E0EDD79B2489AB53002FF6D7 /* mindfull WatchKit App */,
+				E0EDD7A72489AB54002FF6D7 /* mindfull WatchKit Extension */,
 				E0EDD7942489AB52002FF6D7 /* Products */,
 				E0EDD7C02489ACAF002FF6D7 /* Frameworks */,
 				A73287B59243E9C9F9600CBD /* Configuration */,
@@ -142,19 +142,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E0EDD79B2489AB53002FF6D7 /* SpeedySloth WatchKit App */ = {
+		E0EDD79B2489AB53002FF6D7 /* mindfull WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
 				E0EDD79C2489AB54002FF6D7 /* Assets.xcassets */,
 				E0EDD79E2489AB54002FF6D7 /* Info.plist */,
 			);
-			path = "SpeedySloth WatchKit App";
+			path = "mindfull WatchKit App";
 			sourceTree = "<group>";
 		};
-		E0EDD7A72489AB54002FF6D7 /* SpeedySloth WatchKit Extension */ = {
+		E0EDD7A72489AB54002FF6D7 /* mindfull WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E0EDD7AA2489AB54002FF6D7 /* SpeedySlothApp.swift */,
+				E0EDD7AA2489AB54002FF6D7 /* mindfullApp.swift */,
 				E0EDD7A82489AB54002FF6D7 /* ContentView.swift */,
 				E0EDD7D02489B113002FF6D7 /* StartView.swift */,
 				E0EDD7CE2489B0C4002FF6D7 /* PagingView.swift */,
@@ -166,7 +166,7 @@
 				E0EDD7AE2489AB55002FF6D7 /* Preview Content */,
 				E0EDD7C32489AE1C002FF6D7 /* Supporting Files */,
 			);
-			path = "SpeedySloth WatchKit Extension";
+			path = "mindfull WatchKit Extension";
 			sourceTree = "<group>";
 		};
 		E0EDD7AE2489AB55002FF6D7 /* Preview Content */ = {
@@ -188,7 +188,7 @@
 		E0EDD7C32489AE1C002FF6D7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E0EDD7BF2489ACAF002FF6D7 /* SpeedySloth WatchKit Extension.entitlements */,
+				E0EDD7BF2489ACAF002FF6D7 /* mindfull WatchKit Extension.entitlements */,
 				E0EDD7AC2489AB55002FF6D7 /* Assets.xcassets */,
 				E0EDD7B12489AB55002FF6D7 /* Info.plist */,
 			);
@@ -328,7 +328,7 @@
 				E0EDD7CB2489B02A002FF6D7 /* MenuView.swift in Sources */,
 				E0EDD7C92489AFF4002FF6D7 /* RunButton.swift in Sources */,
 				E0EDD7CF2489B0C4002FF6D7 /* PagingView.swift in Sources */,
-				E0EDD7AB2489AB54002FF6D7 /* SpeedySlothApp.swift in Sources */,
+				E0EDD7AB2489AB54002FF6D7 /* mindfullApp.swift in Sources */,
 				E0EDD7A92489AB54002FF6D7 /* ContentView.swift in Sources */,
 				E0EDD7C52489AE71002FF6D7 /* WorkoutManager.swift in Sources */,
 			);
