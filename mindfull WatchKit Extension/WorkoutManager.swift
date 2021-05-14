@@ -8,6 +8,7 @@ This file contains the business logic, which is the interface to HealthKit.
 import Foundation
 import HealthKit
 import Combine
+import WatchKit
 
 class WorkoutManager: NSObject, ObservableObject {
     
@@ -41,7 +42,7 @@ class WorkoutManager: NSObject, ObservableObject {
     // Set up and start the timer.
     func setUpTimer() {
         start = Date()
-        cancellable = Timer.publish(every: 0.1, on: .main, in: .default)
+        cancellable = Timer.publish(every: 1, on: .main, in: .default)
             .autoconnect()
             .sink { [weak self] _ in
                 guard let self = self else { return }
@@ -63,14 +64,13 @@ class WorkoutManager: NSObject, ObservableObject {
         let typesToShare: Set = [
             HKQuantityType.workoutType(),
             HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.mindfulSession)!,
-            HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!
+            HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
+            HKQuantityType.quantityType(forIdentifier: .heartRate)!
         ]
         
         // The quantity types to read from the health store.
         let typesToRead: Set = [
             HKQuantityType.quantityType(forIdentifier: .heartRate)!,
-            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
-            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!,
             HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
             HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.mindfulSession)!
             
@@ -86,7 +86,7 @@ class WorkoutManager: NSObject, ObservableObject {
     func workoutConfiguration() -> HKWorkoutConfiguration {
         /// - Tag: WorkoutConfiguration
         let configuration = HKWorkoutConfiguration()
-        configuration.activityType = .mindAndBody
+        configuration.activityType = .other
         
         return configuration
     }
@@ -162,10 +162,8 @@ class WorkoutManager: NSObject, ObservableObject {
         // Reset the published values.
         DispatchQueue.main.async {
             self.elapsedSeconds = 0
-            self.activeCalories = 0
             self.heartrate = 0
-            self.distance = 0
-            self.HRV = 100
+            
         }
     }
     
@@ -195,7 +193,8 @@ class WorkoutManager: NSObject, ObservableObject {
                 return
             case HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN):
                 let HRVUnit = HKUnit.init(from: "ms")
-                let value = statistics.mostRecentQuantity()?.doubleValue(for: HRVUnit)
+                let value = statistics.averageQuantity()?.doubleValue(for: HRVUnit)
+                print(value!)
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 self.HRV = roundedValue
                 return
@@ -226,8 +225,29 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
         
     }
-}
 
+// MARK: - My Functions
+    func repeatResonantHaptics(liveHR: Double, elapsedSeconds: Int) {
+        while running { // Call whilst workout is running
+            if elapsedSeconds % 10 == 0 { // Call the below every 10s
+                if liveHR < 65 {
+                    WKInterfaceDevice.current().play(.success)
+                }
+                else {
+                    WKInterfaceDevice.current().play(.directionUp)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                        WKInterfaceDevice.current().play(.directionDown)
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+                        // Wait 6s
+                    }
+                }
+            }
+
+        }
+    }
+}
+    
 // MARK: - HKLiveWorkoutBuilderDelegate
 extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
     func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
@@ -248,3 +268,5 @@ extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
         }
     }
 }
+
+

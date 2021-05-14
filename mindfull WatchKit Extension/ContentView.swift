@@ -29,6 +29,7 @@ struct ContentView: View {
     
     func startAction() {
         workoutSession.startWorkout()
+//        workoutSession.extendRunTime() // Allow background mode
         withAnimation {
             workoutInProgress = true
         }

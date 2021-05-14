@@ -12,11 +12,10 @@ import UIKit
 struct RunStyle: ButtonStyle {
     func makeBody(configuration: ButtonStyleConfiguration) -> some View {
         Circle()
-            .fill(Color(UIColor.darkGray))
+            .fill(Color(UIColor.white))
             .overlay(
                 configuration.label
-                    .foregroundColor(.white)
-                    .font(Font.system(size: 36, weight: .black, design: .default))
+                    .foregroundColor(.black)
             )
             .frame(width: 130, height: 130)
     }
@@ -27,7 +26,11 @@ struct RunButton: View {
     
     var body: some View {
         Button(action: { self.action() }) {
-            Text("RUN")
+            Text("mindfull")
+                .font(.title3)
+                .fontWeight(.bold)
+            Text("tap to start")
+                .font(.subheadline)
         }
         .buttonStyle(RunStyle())
     }

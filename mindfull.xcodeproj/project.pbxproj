@@ -471,12 +471,12 @@
 			baseConfigurationReference = E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "SpeedySloth WatchKit Extension/Supporting Files/SpeedySloth WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "mindfull WatchKit Extension/Supporting Files/mindfull WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SpeedySloth WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"mindfull WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = X3Y884DY82;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "SpeedySloth WatchKit Extension/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "mindfull WatchKit Extension/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -498,12 +498,12 @@
 			baseConfigurationReference = E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "SpeedySloth WatchKit Extension/Supporting Files/SpeedySloth WatchKit Extension.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "mindfull WatchKit Extension/Supporting Files/mindfull WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"SpeedySloth WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"mindfull WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = X3Y884DY82;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "SpeedySloth WatchKit Extension/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "mindfull WatchKit Extension/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,7 +530,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X3Y884DY82;
 				IBSC_MODULE = SpeedySloth_WatchKit_Extension;
-				INFOPLIST_FILE = "SpeedySloth WatchKit App/Info.plist";
+				INFOPLIST_FILE = "mindfull WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Ai.Nirvana.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -552,7 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X3Y884DY82;
 				IBSC_MODULE = SpeedySloth_WatchKit_Extension;
-				INFOPLIST_FILE = "SpeedySloth WatchKit App/Info.plist";
+				INFOPLIST_FILE = "mindfull WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = Ai.Nirvana.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

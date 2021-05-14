@@ -15,6 +15,7 @@
       "subtype" : "42mm"
     },
     {
+      "filename" : "AppIcon58x58.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "2x",
@@ -62,6 +63,7 @@
       "subtype" : "42mm"
     },
     {
+      "filename" : "AppIcon216x216.png",
       "idiom" : "watch",
       "role" : "quickLook",
       "scale" : "2x",
@@ -69,6 +71,7 @@
       "subtype" : "44mm"
     },
     {
+      "filename" : "AppIcon.png",
       "idiom" : "watch-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
