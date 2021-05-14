@@ -1,4 +1,4 @@
-# SpeedySloth: Creating a Workout
+# mindfull; based on SpeedySloth example from Apple
 
 Start, stop, and save workouts on Apple Watch with the Workout Builder API.
 
