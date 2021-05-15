@@ -44,15 +44,16 @@ struct WorkoutView: View {
                     }
                 })
             
-                .onChange(of: workoutSession.elapsedSeconds, perform: { value in
-                    if workoutSession.elapsedSeconds % 10 == 0 {
-                        resonantHaptics(liveHR: workoutSession.heartrate)
-                    }
-                })
+//                .onChange(of: workoutSession.elapsedSeconds, perform: { value in
+//                    print(workoutSession.elapsedSeconds)
+//                    if workoutSession.elapsedSeconds % 10 == 0 {
+//                        resonantHaptics(liveHR: workoutSession.heartrate)
+//                    }
+//                })
             
             Text("breathe with me")
                         
-            Print(workoutSession.elapsedSeconds, workoutSession.heartrate)
+//            Print(workoutSession.elapsedSeconds, workoutSession.heartrate)
             
             }
         }

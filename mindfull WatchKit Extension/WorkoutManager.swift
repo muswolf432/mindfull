@@ -42,7 +42,7 @@ class WorkoutManager: NSObject, ObservableObject {
     // Set up and start the timer.
     func setUpTimer() {
         start = Date()
-        cancellable = Timer.publish(every: 1, on: .main, in: .default)
+        cancellable = Timer.publish(every: 10, on: .main, in: .default)
             .autoconnect()
             .sink { [weak self] _ in
                 guard let self = self else { return }
@@ -120,8 +120,21 @@ class WorkoutManager: NSObject, ObservableObject {
         /// - Tag: StartSession
         session.startActivity(with: Date())
         builder.beginCollection(withStart: Date()) { (success, error) in
-            // The workout has started.
+        // The workout has started.
         }
+        
+        // Start resonant haptics
+        print("starting timer")
+        var counter = 0
+        let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+                DispatchQueue.main.async {
+                    print("heartrate = ", self.heartrate)
+                    counter = self.resonantHaptics(liveHR: self.heartrate, counter: counter)
+                }
+            }
+        
+        RunLoop.main.add(timer, forMode: .common)
+
     }
     
     // MARK: - State Control
@@ -142,6 +155,8 @@ class WorkoutManager: NSObject, ObservableObject {
         // Save the elapsed time.
         accumulatedTime = elapsedSeconds
         running = false
+        
+        // Stop resonant haptics
     }
     
     func resumeWorkout() {
@@ -150,12 +165,19 @@ class WorkoutManager: NSObject, ObservableObject {
         // Start the timer.
         setUpTimer()
         running = true
+        
+        // Start resonant haptics
+       
+//        repeatResonantHaptics(liveHR: self.heartrate, elapsedSeconds: self.elapsedSeconds)
     }
     
     func endWorkout() {
         // End the workout session.
         session.end()
         cancellable?.cancel()
+    
+        // Stop resonant haptics
+        
     }
     
     func resetWorkout() {
@@ -229,11 +251,14 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
 // MARK: - My Functions
     func repeatResonantHaptics(liveHR: Double, elapsedSeconds: Int) {
         while running { // Call whilst workout is running
+            print(elapsedSeconds, elapsedSeconds % 10)
             if elapsedSeconds % 10 == 0 { // Call the below every 10s
-                if liveHR < 65 {
+                if liveHR < 70 && liveHR > 30 {
+                    print("success")
                     WKInterfaceDevice.current().play(.success)
                 }
                 else {
+                    print("breathe with me")
                     WKInterfaceDevice.current().play(.directionUp)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                         WKInterfaceDevice.current().play(.directionDown)
@@ -245,6 +270,34 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
             }
 
         }
+    }
+    
+    func resonantHaptics(liveHR: Double, counter: Int) -> Int{
+        var counter = counter
+        if liveHR < 70 && counter <= 3 {
+            counter += 1
+            print("success, counter = ", counter)
+            WKInterfaceDevice.current().play(.success)
+        }
+        else if liveHR > 70 {
+            counter = 0 // Reset the counter
+            print("playing haptics")
+            DispatchQueue.main.async {
+                print("breathe in through your nose")
+                WKInterfaceDevice.current().play(.directionUp)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                print("breathe out through your mouth")
+                WKInterfaceDevice.current().play(.directionDown)}
+            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
+                // Wait 6s
+            }
+        }
+        return counter
+    }
+    
+    @objc func fireTimer() {
+        print("Timer fired!")
     }
 }
     
