@@ -1,0 +1,6 @@
+framework module Pods_mindfull {
+  umbrella header "Pods-mindfull-umbrella.h"
+
+  export *
+  module * { export * }
+}

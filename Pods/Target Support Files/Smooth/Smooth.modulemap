@@ -1,0 +1,6 @@
+module Smooth {
+  umbrella header "Smooth-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -16,49 +16,67 @@ struct WorkoutView: View {
     @EnvironmentObject var workoutSession: WorkoutManager
     @State private var isAnimating = false
     @State private var SR = 1.0
+    @State private var offsetCopies = false // Offset breathing circles
     
     var body: some View {
-        VStack(alignment: .center) {
-            // The current heartrate.
-            Text("\(workoutSession.heartrate, specifier: "%.0f") BPM")
+        
+        
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
             
-            Text("\(workoutSession.HRV, specifier: "%.0f") ms")
-            
-            Text("\(workoutSession.elapsedSeconds) s")
-                        
-            Image("undertaleHeart")
-                .resizable()
-                .scaledToFit()
-                .scaleEffect(self.isAnimating ? 0.9 : 1)
-                        .onAppear(perform: {
-                            // Call functions here
-                            isAnimating = true
-                        })
-                .animation(
-                    Animation.spring(response: SR).repeatForever(autoreverses: false))
-                
-                // Update animation to follow user heartrate
-                .onChange(of: workoutSession.heartrate, perform: { value in
-                    DispatchQueue.main.async {
-                    SR = springResponse(liveHR: workoutSession.heartrate)
-                    }
-                })
-            
-//                .onChange(of: workoutSession.elapsedSeconds, perform: { value in
-//                    print(workoutSession.elapsedSeconds)
-//                    if workoutSession.elapsedSeconds % 10 == 0 {
-//                        resonantHaptics(liveHR: workoutSession.heartrate)
-//                    }
-//                })
-            
-            Text("breathe with me")
-                        
-//            Print(workoutSession.elapsedSeconds, workoutSession.heartrate)
-            
+            ZStack {
+                ForEach(0..<6) {
+                    LinearGradient(gradient: Gradient(colors: [Color(red: 0, green: 1, blue: 1), Color(red: 0, green: 1, blue: 1)]), startPoint: .leading, endPoint: .trailing)
+                        .clipShape(Circle())
+                        .foregroundColor(Color(red: 0, green: 1, blue: 1))
+                        .frame(width: 60, height: 60)
+                        .opacity(0.5)
+                        .blendMode(.hardLight)
+                        .offset(x: workoutSession.breathing ? 30 : 0)
+                        .rotationEffect(.degrees(Double($0) * 60))
+                }
             }
+            .rotationEffect(.degrees(workoutSession.breathing ? 120 : 0))
+            .scaleEffect(workoutSession.breathing ? 1.45 : 0.5)
+            .animation(Animation.easeInOut(duration: 4))
+            .onAppear() {
+                workoutSession.breathing = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    withAnimation(Animation.easeInOut(duration: 6)) {
+                        workoutSession.breathing = false
+                        workoutSession.getHRVAverage()
+                    }
+                }
+            }
+            Image(systemName: "arrow.up.heart")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .foregroundColor(.red)
+                .opacity(workoutSession.success ? 0.8 : 0)
+                .animation(.default)
+            VStack {
+                Spacer()
+                
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: workoutSession.SDNNScore, height: 20, alignment: .leading)
+                    .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.green)
+                    .animation(.easeInOut)
+
+            }
+            
+            VStack {
+                Text(String(format: "HRV: %.0f ms", workoutSession.SDNNScore))
+                Text(String(format: "avgHRV: %.0f ms", workoutSession.avgHRV))
+                Spacer()
+            }
+
+
+        } // End of Z-stack
+
         }
     }
-    
+
     // Compute the spring response if not nil
     func springResponse(liveHR: Double) -> Double {
         if liveHR == 0 {

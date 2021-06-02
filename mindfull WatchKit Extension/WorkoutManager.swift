@@ -9,6 +9,7 @@ import Foundation
 import HealthKit
 import Combine
 import WatchKit
+import Smooth 
 
 class WorkoutManager: NSObject, ObservableObject {
     
@@ -16,6 +17,8 @@ class WorkoutManager: NSObject, ObservableObject {
     let healthStore = HKHealthStore()
     var session: HKWorkoutSession!
     var builder: HKLiveWorkoutBuilder!
+    var heartRateSamples = [Double]()
+
     
     // Publish the following:
     // - heartrate
@@ -29,6 +32,11 @@ class WorkoutManager: NSObject, ObservableObject {
     @Published var distance: Double = 0
     @Published var elapsedSeconds: Int = 0
     @Published var HRV: Double = 0
+    @Published var breathing = false // Track inhale/exhales
+    @Published var success = false // Track user success
+    @Published var SDNNScore: CGFloat = 0.1
+    @Published var oldSDNNScore: CGFloat = 0.1
+    @Published var avgHRV: Double = 0
     
     // The app's workout state.
     var running: Bool = false
@@ -38,11 +46,12 @@ class WorkoutManager: NSObject, ObservableObject {
     var start: Date = Date()
     var cancellable: Cancellable?
     var accumulatedTime: Int = 0
+    var timer: Timer? // my timer
     
     // Set up and start the timer.
     func setUpTimer() {
         start = Date()
-        cancellable = Timer.publish(every: 10, on: .main, in: .default)
+        cancellable = Timer.publish(every: 1, on: .main, in: .default)
             .autoconnect()
             .sink { [weak self] _ in
                 guard let self = self else { return }
@@ -97,6 +106,7 @@ class WorkoutManager: NSObject, ObservableObject {
         setUpTimer()
         self.running = true
         
+        
         // Create the session and obtain the workout builder.
         /// - Tag: CreateWorkout
         do {
@@ -123,18 +133,37 @@ class WorkoutManager: NSObject, ObservableObject {
         // The workout has started.
         }
         
+//        self.getHRVSampleQuery() // Get last HRV
+
+        
         // Start resonant haptics
         print("starting timer")
         var counter = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+
+        self.timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { timer in
                 DispatchQueue.main.async {
-                    print("heartrate = ", self.heartrate)
-                    counter = self.resonantHaptics(liveHR: self.heartrate, counter: counter)
+//                    print("heartrate = ", self.heartrate)
+                    if self.heartRateSamples.count > 12 {
+                        
+//                        self.zendoHRV() // Update SDNN values using zendo function
+//                        counter = self.resonantHaptics(SDNN: 10, counter: counter) // use zendo
+
+                        counter = self.resonantHaptics(SDNN: self.HRArrayToSDNN(HRArray: self.heartRateSamples), counter: counter) // old line
+                        
+                        print(self.oldSDNNScore, self.SDNNScore)
+
+
+                    }
+                    else {
+                        // Call breathe function (has timer, runs 6 times)
+                        self.breathe()
+                        print(self.oldSDNNScore, self.SDNNScore)
+                    }
+//                    self.getHRVSampleQuery()
                 }
             }
         
-        RunLoop.main.add(timer, forMode: .common)
-
+        
     }
     
     // MARK: - State Control
@@ -157,6 +186,7 @@ class WorkoutManager: NSObject, ObservableObject {
         running = false
         
         // Stop resonant haptics
+        self.timer?.invalidate()
     }
     
     func resumeWorkout() {
@@ -167,8 +197,14 @@ class WorkoutManager: NSObject, ObservableObject {
         running = true
         
         // Start resonant haptics
+        var counter = 0
+        self.timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+                DispatchQueue.main.async {
+                    print("heartrate = ", self.heartrate)
+                    counter = self.resonantHaptics(SDNN: self.HRArrayToSDNN(HRArray: self.heartRateSamples), counter: counter)
+                }
+            }
        
-//        repeatResonantHaptics(liveHR: self.heartrate, elapsedSeconds: self.elapsedSeconds)
     }
     
     func endWorkout() {
@@ -177,6 +213,11 @@ class WorkoutManager: NSObject, ObservableObject {
         cancellable?.cancel()
     
         // Stop resonant haptics
+        self.timer?.invalidate()
+        
+        // Reset success state
+        self.success = false
+        self.breathing = false // reset breathing too
         
     }
     
@@ -185,6 +226,14 @@ class WorkoutManager: NSObject, ObservableObject {
         DispatchQueue.main.async {
             self.elapsedSeconds = 0
             self.heartrate = 0
+            self.HRV = 0
+            
+            // Reset success state
+            self.success = false
+            self.breathing = false // reset breathing too
+            
+            // and HR array
+            self.heartRateSamples = []
             
         }
     }
@@ -200,26 +249,16 @@ class WorkoutManager: NSObject, ObservableObject {
                 /// - Tag: SetLabel
                 let heartRateUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
                 let value = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit)
+//                print(value!)
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 self.heartrate = roundedValue
-            case HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned):
-                let energyUnit = HKUnit.kilocalorie()
-                let value = statistics.sumQuantity()?.doubleValue(for: energyUnit)
-                self.activeCalories = Double( round( 1 * value! ) / 1 )
-                return
-            case HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning):
-                let meterUnit = HKUnit.meter()
-                let value = statistics.sumQuantity()?.doubleValue(for: meterUnit)
-                let roundedValue = Double( round( 1 * value! ) / 1 )
-                self.distance = roundedValue
-                return
+                self.heartRateSamples.append(self.heartrate) // Append to array
             case HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN):
-                let HRVUnit = HKUnit.init(from: "ms")
-                let value = statistics.averageQuantity()?.doubleValue(for: HRVUnit)
-                print(value!)
+                let HRVUnit = HKUnit.secondUnit(with: .milli)
+                let value = statistics.mostRecentQuantity()?.doubleValue(for: HRVUnit)
+                print("HRV = ",value!)
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 self.HRV = roundedValue
-                return
             default:
                 return
             }
@@ -272,33 +311,181 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         }
     }
     
-    func resonantHaptics(liveHR: Double, counter: Int) -> Int{
+    func resonantHaptics(SDNN: Double, counter: Int) -> Int{
         var counter = counter
-        if liveHR < 70 && counter <= 3 {
+
+        if self.SDNNScore > self.oldSDNNScore && counter < 100 {
             counter += 1
+            
+            self.breathing = true // Grow breathing circle
+            self.success = true // User is doing well!
             print("success, counter = ", counter)
-            WKInterfaceDevice.current().play(.success)
+//            WKInterfaceDevice.current().play(.success)
+            self.breathe()
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+//                print("breathe out through your mouth")
+//                self.breathing = false // Shrink breathing circle
+//                WKInterfaceDevice.current().play(.stop)
+//            }
         }
-        else if liveHR > 70 {
+        else if self.SDNNScore <= self.oldSDNNScore {
             counter = 0 // Reset the counter
+            self.breathe() // Call breathe function 6 times
+
             print("playing haptics")
-            DispatchQueue.main.async {
-                print("breathe in through your nose")
-                WKInterfaceDevice.current().play(.directionUp)
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                print("breathe out through your mouth")
-                WKInterfaceDevice.current().play(.directionDown)}
-            DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
-                // Wait 6s
-            }
+            self.success = false // Reset success status
+//            DispatchQueue.main.async {
+//                self.breathing = true // Grow breathing circle
+//                print("breathe in through your nose")
+//                WKInterfaceDevice.current().play(.start)
+//            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+//                self.breathing = false // Shrink breathing circle
+//                print("breathe out through your mouth")
+//                WKInterfaceDevice.current().play(.stop)
+//            }
         }
+        
         return counter
     }
     
-    @objc func fireTimer() {
-        print("Timer fired!")
+    
+    func getHRVSampleQuery() {
+        let HRVType = HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN)
+
+        let sortDescriptor = NSSortDescriptor(key:HKSampleSortIdentifierStartDate, ascending: false)
+
+        let startDate = Date() - 6 * 60 * 60 // start date is 6 hours ago
+//        let startDate = Date() // start now
+        //  Set the Predicates & Interval
+        let predicate: NSPredicate? = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: HKQueryOptions.strictEndDate)
+
+        let sampleQuery = HKSampleQuery(sampleType: HRVType!, predicate: predicate, limit: 30, sortDescriptors: [sortDescriptor]) { sampleQuery, results, error  in
+            if(error == nil) {
+                for result in results! {
+                    print("Startdate")
+                    print(result.startDate)
+                    print(result.sampleType)
+//                    print(result.quantity.doubleValue(for: HKUnit.secondUnit(with: .milli)))
+                    print(result)
+                }
+            }
+        }
+        healthStore.execute(sampleQuery)
     }
+    
+    func standardDeviation(arr : [Double]) -> Double {
+        let length = Double(arr.count)
+        let avg = arr.reduce(0, {$0 + $1}) / length
+        let sumOfSquaredAvgDiff = arr.map { pow($0 - avg, 2.0)}.reduce(0, {$0 + $1})
+        return sqrt(sumOfSquaredAvgDiff / length)
+    }
+    
+    func HRArrayToSDNN(HRArray: [Double]) -> Double {
+        var SDNN: Double
+        var oldSDNN: Double
+        let array = HRArray.map {$0 * 1000/60} // Convert BPM to RR
+        
+        SDNN = standardDeviation(arr: array)
+//        print(String(format: "HRV: %.0f ms", SDNN))
+        
+        oldSDNN = standardDeviation(arr: Array(array[0..<(array.count-12)]))
+                
+        self.SDNNScore = CGFloat(round(SDNN))
+        self.oldSDNNScore = CGFloat(round(oldSDNN))
+        
+        
+        return SDNN
+    
+    }
+    
+    func zendoHRV() {
+        let beatsAsFloat : Array<Float> = self.heartRateSamples.map
+        {
+//            Float(1000 * 60 / $0) // *60 to convert to BPS
+            Float($0 * 1000 / 60) // This one corroborates with EliteHRV!!
+        }
+        
+        
+        let smoothBeats = CubicInterpolator(points:
+            CubicInterpolator(points: beatsAsFloat, tension: 0.1).resample(interval: 3)
+                          , tension: 0.1).resample(interval: 0.25).map { $0 }
+        
+        let smoothBeatsAsDouble = smoothBeats.map
+        {
+                Double($0)
+        }
+        
+       
+        // Use segments of data
+        self.SDNNScore = CGFloat(standardDeviation(arr: Array(smoothBeatsAsDouble[(smoothBeatsAsDouble.count-12) ..< (smoothBeatsAsDouble.count)])))
+        self.oldSDNNScore = CGFloat(standardDeviation(arr: Array(smoothBeatsAsDouble[(smoothBeatsAsDouble.count-24) ..< (smoothBeatsAsDouble.count-12)])))
+        
+        // Use all data
+//        self.SDNNScore = CGFloat(standardDeviation(arr: Array(smoothBeatsAsDouble)))
+//        self.oldSDNNScore = CGFloat(standardDeviation(arr: Array(smoothBeatsAsDouble[0 ..< (smoothBeatsAsDouble.count-12)])))
+        
+    }
+    
+
+    func getHRVAverage() {
+    
+        let hkType = HKObjectType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!
+        
+        let today = Calendar.autoupdatingCurrent.startOfDay(for: Date())
+
+        let hkPredicate = HKQuery.predicateForSamples(withStart: today, end: Date(), options: .strictStartDate)
+        
+        let options = HKStatisticsOptions.discreteAverage
+        
+        let hkQuery = HKStatisticsQuery(quantityType: hkType,
+                                        quantitySamplePredicate: hkPredicate,
+                                        options: options)
+                {
+                query, result, error in
+                    if error == nil {
+                        if let result = result {
+                            if let value = result.averageQuantity()?.doubleValue(for: HKUnit(from: "ms"))
+                            {
+                                DispatchQueue.main.async {
+                                    self.avgHRV = value
+//                                    print(value)
+                                }
+                            }
+                        }
+                    }
+            }
+        
+            healthStore.execute(hkQuery)
+        
+        }
+    
+    func breathe() {
+        var runCount = 0
+
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+            runCount += 1
+            self.breathing = true
+            if self.success == true {
+                print("good job! breathe in")
+                WKInterfaceDevice.current().play(.success)
+            }
+            else {
+                print("it's okay, relax and breathe in")
+                WKInterfaceDevice.current().play(.start)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                print("breathe out")
+                self.breathing = false // Shrink breathing circle
+                WKInterfaceDevice.current().play(.stop)
+            if runCount == 6 {
+                timer.invalidate()
+            }
+        }
+        }
+    }
+
+    
 }
     
 // MARK: - HKLiveWorkoutBuilderDelegate

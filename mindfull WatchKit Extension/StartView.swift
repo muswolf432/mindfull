@@ -21,9 +21,11 @@ struct StartView: View {
         }).onAppear() {
             // Request HealthKit store authorization.
             self.workoutSession.requestAuthorization()
+            // Pull avg HRV
+            workoutSession.getHRVAverage()
         }
         // The HRV
-        Text("\(workoutSession.HRV, specifier: "%.0f") ms")
+        Text("Average HRV: \(workoutSession.avgHRV, specifier: "%.0f") ms")
         }
     }
 }

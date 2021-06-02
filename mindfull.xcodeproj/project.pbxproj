@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0649D50215469F8C02C88D5B /* Pods_mindfull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C61F7A579879A4C81124BCF /* Pods_mindfull.framework */; };
+		7614EB35BAE4917AA88B5B21 /* libPods-mindfull WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 227A5053FBF7D22874725C46 /* libPods-mindfull WatchKit Extension.a */; };
+		C6EBDDC9265BE125002FF495 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EBDDC8265BE124002FF495 /* WorkoutView.swift */; };
 		E0EDD7982489AB53002FF6D7 /* mindfull WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E0EDD7972489AB53002FF6D7 /* mindfull WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E0EDD79D2489AB54002FF6D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD79C2489AB54002FF6D7 /* Assets.xcassets */; };
 		E0EDD7A42489AB54002FF6D7 /* mindfull WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E0EDD7A32489AB54002FF6D7 /* mindfull WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -19,9 +22,9 @@
 		E0EDD7C72489AEAB002FF6D7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7C62489AEAB002FF6D7 /* MenuButton.swift */; };
 		E0EDD7C92489AFF4002FF6D7 /* RunButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7C82489AFF4002FF6D7 /* RunButton.swift */; };
 		E0EDD7CB2489B02A002FF6D7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7CA2489B02A002FF6D7 /* MenuView.swift */; };
-		E0EDD7CD2489B085002FF6D7 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7CC2489B085002FF6D7 /* WorkoutView.swift */; };
 		E0EDD7CF2489B0C4002FF6D7 /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7CE2489B0C4002FF6D7 /* PagingView.swift */; };
 		E0EDD7D12489B113002FF6D7 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7D02489B113002FF6D7 /* StartView.swift */; };
+		EB33CDD5200F2ED9947F3006 /* Pods_mindfull_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3585A996A76C8B0AD9097344 /* Pods_mindfull_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +70,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C61F7A579879A4C81124BCF /* Pods_mindfull.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mindfull.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		227A5053FBF7D22874725C46 /* libPods-mindfull WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mindfull WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3585A996A76C8B0AD9097344 /* Pods_mindfull_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mindfull_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		426857C0014CBCC23A1152A2 /* Pods-mindfull WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mindfull WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-mindfull WatchKit Extension/Pods-mindfull WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		62CD57AC739635CA29C57B49 /* Pods-mindfull WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mindfull WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-mindfull WatchKit App/Pods-mindfull WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		6753D2E9594A89A77A791DC7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8683155AF4E02EA75A5520DB /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		A5B52331D7BED7B8AB53370A /* Pods-mindfull WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mindfull WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-mindfull WatchKit Extension/Pods-mindfull WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		B36DA155A8FF9DDF7C1F5612 /* Pods-mindfull.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mindfull.release.xcconfig"; path = "Target Support Files/Pods-mindfull/Pods-mindfull.release.xcconfig"; sourceTree = "<group>"; };
+		C6EBDDC8265BE124002FF495 /* WorkoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		CDB553C64BBBFD14B1BF8C20 /* Pods-mindfull WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mindfull WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-mindfull WatchKit App/Pods-mindfull WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		E0EDD7932489AB52002FF6D7 /* mindfull.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mindfull.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0EDD7972489AB53002FF6D7 /* mindfull WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mindfull WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0EDD79C2489AB54002FF6D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,18 +97,35 @@
 		E0EDD7C62489AEAB002FF6D7 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		E0EDD7C82489AFF4002FF6D7 /* RunButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunButton.swift; sourceTree = "<group>"; };
 		E0EDD7CA2489B02A002FF6D7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		E0EDD7CC2489B085002FF6D7 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		E0EDD7CE2489B0C4002FF6D7 /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
 		E0EDD7D02489B113002FF6D7 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		FE329F169D318B4B8B30EF47 /* Pods-mindfull.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mindfull.debug.xcconfig"; path = "Target Support Files/Pods-mindfull/Pods-mindfull.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0C686A92A67E76FCE75519B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0649D50215469F8C02C88D5B /* Pods_mindfull.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DF2DFBA024C5B57F50D029A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB33CDD5200F2ED9947F3006 /* Pods_mindfull_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0EDD7A02489AB54002FF6D7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E0EDD7C22489ACAF002FF6D7 /* HealthKit.framework in Frameworks */,
+				7614EB35BAE4917AA88B5B21 /* libPods-mindfull WatchKit Extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +138,19 @@
 				8683155AF4E02EA75A5520DB /* LICENSE.txt */,
 			);
 			path = LICENSE;
+			sourceTree = "<group>";
+		};
+		52974CCC41F200E2E30B16E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE329F169D318B4B8B30EF47 /* Pods-mindfull.debug.xcconfig */,
+				B36DA155A8FF9DDF7C1F5612 /* Pods-mindfull.release.xcconfig */,
+				CDB553C64BBBFD14B1BF8C20 /* Pods-mindfull WatchKit App.debug.xcconfig */,
+				62CD57AC739635CA29C57B49 /* Pods-mindfull WatchKit App.release.xcconfig */,
+				A5B52331D7BED7B8AB53370A /* Pods-mindfull WatchKit Extension.debug.xcconfig */,
+				426857C0014CBCC23A1152A2 /* Pods-mindfull WatchKit Extension.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		A73287B59243E9C9F9600CBD /* Configuration */ = {
@@ -129,6 +171,7 @@
 				E0EDD7C02489ACAF002FF6D7 /* Frameworks */,
 				A73287B59243E9C9F9600CBD /* Configuration */,
 				42A79FD571DD2D5DD35AB62E /* LICENSE */,
+				52974CCC41F200E2E30B16E7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,8 +201,8 @@
 				E0EDD7A82489AB54002FF6D7 /* ContentView.swift */,
 				E0EDD7D02489B113002FF6D7 /* StartView.swift */,
 				E0EDD7CE2489B0C4002FF6D7 /* PagingView.swift */,
-				E0EDD7CC2489B085002FF6D7 /* WorkoutView.swift */,
 				E0EDD7CA2489B02A002FF6D7 /* MenuView.swift */,
+				C6EBDDC8265BE124002FF495 /* WorkoutView.swift */,
 				E0EDD7C82489AFF4002FF6D7 /* RunButton.swift */,
 				E0EDD7C62489AEAB002FF6D7 /* MenuButton.swift */,
 				E0EDD7C42489AE71002FF6D7 /* WorkoutManager.swift */,
@@ -181,6 +224,9 @@
 			isa = PBXGroup;
 			children = (
 				E0EDD7C12489ACAF002FF6D7 /* HealthKit.framework */,
+				1C61F7A579879A4C81124BCF /* Pods_mindfull.framework */,
+				3585A996A76C8B0AD9097344 /* Pods_mindfull_WatchKit_App.framework */,
+				227A5053FBF7D22874725C46 /* libPods-mindfull WatchKit Extension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,8 +248,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0EDD7BC2489AB55002FF6D7 /* Build configuration list for PBXNativeTarget "mindfull" */;
 			buildPhases = (
+				D275253D9381844FA074AC62 /* [CP] Check Pods Manifest.lock */,
 				E0EDD7912489AB52002FF6D7 /* Resources */,
 				E0EDD7BB2489AB55002FF6D7 /* Embed Watch Content */,
+				0C686A92A67E76FCE75519B9 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,8 +267,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0EDD7B82489AB55002FF6D7 /* Build configuration list for PBXNativeTarget "mindfull WatchKit App" */;
 			buildPhases = (
+				82F0A3807D00358E7E1E6A00 /* [CP] Check Pods Manifest.lock */,
 				E0EDD7952489AB53002FF6D7 /* Resources */,
 				E0EDD7B72489AB55002FF6D7 /* Embed App Extensions */,
+				2DF2DFBA024C5B57F50D029A /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,6 +286,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0EDD7B42489AB55002FF6D7 /* Build configuration list for PBXNativeTarget "mindfull WatchKit Extension" */;
 			buildPhases = (
+				AA49327D1DA803246E52026A /* [CP] Check Pods Manifest.lock */,
 				E0EDD79F2489AB54002FF6D7 /* Sources */,
 				E0EDD7A02489AB54002FF6D7 /* Frameworks */,
 				E0EDD7A12489AB54002FF6D7 /* Resources */,
@@ -317,13 +368,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		82F0A3807D00358E7E1E6A00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mindfull WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA49327D1DA803246E52026A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mindfull WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D275253D9381844FA074AC62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mindfull-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E0EDD79F2489AB54002FF6D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E0EDD7D12489B113002FF6D7 /* StartView.swift in Sources */,
-				E0EDD7CD2489B085002FF6D7 /* WorkoutView.swift in Sources */,
 				E0EDD7C72489AEAB002FF6D7 /* MenuButton.swift in Sources */,
 				E0EDD7CB2489B02A002FF6D7 /* MenuView.swift in Sources */,
 				E0EDD7C92489AFF4002FF6D7 /* RunButton.swift in Sources */,
@@ -331,6 +450,7 @@
 				E0EDD7AB2489AB54002FF6D7 /* mindfullApp.swift in Sources */,
 				E0EDD7A92489AB54002FF6D7 /* ContentView.swift in Sources */,
 				E0EDD7C52489AE71002FF6D7 /* WorkoutManager.swift in Sources */,
+				C6EBDDC9265BE125002FF495 /* WorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +472,6 @@
 /* Begin XCBuildConfiguration section */
 		E0EDD7B22489AB55002FF6D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -413,7 +532,6 @@
 		};
 		E0EDD7B32489AB55002FF6D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -468,7 +586,7 @@
 		};
 		E0EDD7B52489AB55002FF6D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */;
+			baseConfigurationReference = A5B52331D7BED7B8AB53370A /* Pods-mindfull WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "mindfull WatchKit Extension/Supporting Files/mindfull WatchKit Extension.entitlements";
@@ -495,7 +613,7 @@
 		};
 		E0EDD7B62489AB55002FF6D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */;
+			baseConfigurationReference = 426857C0014CBCC23A1152A2 /* Pods-mindfull WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "mindfull WatchKit Extension/Supporting Files/mindfull WatchKit Extension.entitlements";
@@ -522,7 +640,7 @@
 		};
 		E0EDD7B92489AB55002FF6D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */;
+			baseConfigurationReference = CDB553C64BBBFD14B1BF8C20 /* Pods-mindfull WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -544,7 +662,7 @@
 		};
 		E0EDD7BA2489AB55002FF6D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */;
+			baseConfigurationReference = 62CD57AC739635CA29C57B49 /* Pods-mindfull WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -566,7 +684,7 @@
 		};
 		E0EDD7BD2489AB55002FF6D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */;
+			baseConfigurationReference = FE329F169D318B4B8B30EF47 /* Pods-mindfull.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -582,7 +700,7 @@
 		};
 		E0EDD7BE2489AB55002FF6D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4DF41FDC704732F285B9EAA /* SampleCode.xcconfig */;
+			baseConfigurationReference = B36DA155A8FF9DDF7C1F5612 /* Pods-mindfull.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
