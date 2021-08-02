@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		0FBF0AB06BEC1A17B1C82E36F95C3353 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */; };
-		2D1314E60ED1183B669D24A4BDBABB5A /* VectorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A686A3455982A30CD644A27FBF115BF /* VectorHelper.swift */; };
-		32FA18791453109D182938A1A93E0AD2 /* Smooth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FABF6414D26C5D698DE7127246FEF8C /* Smooth-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2D1314E60ED1183B669D24A4BDBABB5A /* VectorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90B6C7E3F3D208FF536A80E35F79927 /* VectorHelper.swift */; };
+		32FA18791453109D182938A1A93E0AD2 /* Smooth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F9C1E1524CDCD302DBDDBFE4CFD4F0F /* Smooth-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3E216A174634494BD491D374D0DF0B7D /* Pods-mindfull WatchKit App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AC38C66BB1631D0B800EEE6BB6CC38CB /* Pods-mindfull WatchKit App-dummy.m */; };
-		61C78BD0BF0B2914EFCEA09A0ADF7985 /* VectorInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1794654C675718CA637004A2D7D310C9 /* VectorInterpolator.swift */; };
-		6E02764E4739CADB79ED8C59C2644ACB /* Interpolator+Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1673F734064001A98A59044DE7F0A87 /* Interpolator+Vector.swift */; };
+		61C78BD0BF0B2914EFCEA09A0ADF7985 /* VectorInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8FB1C4C3ED0795F095104E72840FC /* VectorInterpolator.swift */; };
+		6E02764E4739CADB79ED8C59C2644ACB /* Interpolator+Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74902B8C183AEABCFFAA4332632B0B90 /* Interpolator+Vector.swift */; };
 		70FA29DEA390EB3EB6357FC97D02FDFF /* Pods-mindfull WatchKit Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 401346F86FB8E39B2ED3FE23169ACECB /* Pods-mindfull WatchKit Extension-dummy.m */; };
 		7922978E0BE91933DD69DEC39B5AC5D0 /* Pods-mindfull-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46985283EEEE75C599FED4DB3DA02695 /* Pods-mindfull-dummy.m */; };
 		88C9C9FD6FC5E31343A40C152C9E3177 /* Pods-mindfull-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FEE661D28B82C71C40D25012DBC7BE9 /* Pods-mindfull-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B2865762ECA2A53F4CBE01A6A5BEC2B6 /* CubicInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360D9893667A7CB7A79517AF6A461BA1 /* CubicInterpolator.swift */; };
-		B5ADC0BE80D7657FA8C1F7808DA9E61C /* Smooth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1FB9DC8D790D17887E6DEF926D6E538 /* Smooth-dummy.m */; };
-		B7DFA21BB7DB73869C038B6B325B2FB2 /* Interpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C5A504EB7E73968877D36E09099E1 /* Interpolator.swift */; };
+		B2865762ECA2A53F4CBE01A6A5BEC2B6 /* CubicInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539B4091D3B52212DF7BA7F0ED7B7F2 /* CubicInterpolator.swift */; };
+		B5ADC0BE80D7657FA8C1F7808DA9E61C /* Smooth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88655EBCB42F9112EB2EE1BE898937EA /* Smooth-dummy.m */; };
+		B7DFA21BB7DB73869C038B6B325B2FB2 /* Interpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD5FF15CA24458341587DC505A7516B /* Interpolator.swift */; };
 		BC55FE132C7B042D35B153800106FEB2 /* Pods-mindfull WatchKit App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C4C180EC8FC69E2685423CB83042831 /* Pods-mindfull WatchKit App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3CB409B15EA05B938866FCFB3C99496 /* LinearInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBFC6CDD6E2297B7A75EB7BCDBFF2CB /* LinearInterpolator.swift */; };
+		C3CB409B15EA05B938866FCFB3C99496 /* LinearInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328AF01AF4BBC94E3FE6E8071BFA46D4 /* LinearInterpolator.swift */; };
 		E69E9EBC6A58C1C96261918557C66B37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */; };
 		E95670D511E650A15F15306EA947BC3E /* Pods-mindfull WatchKit Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C399756521545B7B693AB716768BB20D /* Pods-mindfull WatchKit Extension-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FA46A9F76F600909195673573D2A1730 /* SincFilterInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5004676C5EE29483D82C1CE77D9B4FC /* SincFilterInterpolator.swift */; };
+		FA46A9F76F600909195673573D2A1730 /* SincFilterInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511F695CA98BBA466E26EE642E31F25F /* SincFilterInterpolator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,47 +37,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02829D322F45B76C2E033FF5C7C00967 /* Smooth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Smooth.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		00505D6251A874CF85B2DB608782AFC6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0AEAACE066E6ECA6DAA00EE2E5A7EF8D /* Pods_mindfull_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mindfull_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1794654C675718CA637004A2D7D310C9 /* VectorInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VectorInterpolator.swift; path = Sources/Core/VectorInterpolator.swift; sourceTree = "<group>"; };
-		1BCEEF54F34D34A792D1446BC82849F8 /* Smooth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Smooth.modulemap; sourceTree = "<group>"; };
 		21CBDF8A3BB85A4D279B684562063D2F /* Pods-mindfull WatchKit App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mindfull WatchKit App-acknowledgements.markdown"; sourceTree = "<group>"; };
 		22F49F5B1780FA75FAECD6F437960BAB /* Pods-mindfull WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mindfull WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		238F1909F927C5CC7D8E97AA2F566F18 /* Smooth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Smooth.debug.xcconfig; sourceTree = "<group>"; };
+		2539B4091D3B52212DF7BA7F0ED7B7F2 /* CubicInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CubicInterpolator.swift; path = Sources/Core/CubicInterpolator.swift; sourceTree = "<group>"; };
 		28A261060CBCF2D92739422E166C4BFB /* Pods-mindfull-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mindfull-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2B75C9BC981BFADE3FF674AD37F3E613 /* libSmooth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSmooth.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		33253A1EFC06621B36D793B78FE558BB /* Smooth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Smooth-prefix.pch"; sourceTree = "<group>"; };
-		360D9893667A7CB7A79517AF6A461BA1 /* CubicInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CubicInterpolator.swift; path = Sources/Core/CubicInterpolator.swift; sourceTree = "<group>"; };
+		328AF01AF4BBC94E3FE6E8071BFA46D4 /* LinearInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinearInterpolator.swift; path = Sources/Core/LinearInterpolator.swift; sourceTree = "<group>"; };
+		37D8FB1C4C3ED0795F095104E72840FC /* VectorInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VectorInterpolator.swift; path = Sources/Core/VectorInterpolator.swift; sourceTree = "<group>"; };
 		401346F86FB8E39B2ED3FE23169ACECB /* Pods-mindfull WatchKit Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mindfull WatchKit Extension-dummy.m"; sourceTree = "<group>"; };
+		458CEF303687FBAFB54DE66927CCE076 /* Smooth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Smooth-prefix.pch"; sourceTree = "<group>"; };
 		46985283EEEE75C599FED4DB3DA02695 /* Pods-mindfull-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mindfull-dummy.m"; sourceTree = "<group>"; };
-		46F006882F0D4A201629D3581EDB0F01 /* Smooth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Smooth.debug.xcconfig; sourceTree = "<group>"; };
-		589BC8E45B3D6D84ABBCEE9137238EED /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		511F695CA98BBA466E26EE642E31F25F /* SincFilterInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SincFilterInterpolator.swift; path = Sources/Core/SincFilterInterpolator.swift; sourceTree = "<group>"; };
 		5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5D0C5A504EB7E73968877D36E09099E1 /* Interpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interpolator.swift; path = Sources/Core/Interpolator.swift; sourceTree = "<group>"; };
 		62CAAF6BA32B89423EA9FB99C52FDCCC /* Pods_mindfull.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mindfull.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FABF6414D26C5D698DE7127246FEF8C /* Smooth-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Smooth-umbrella.h"; sourceTree = "<group>"; };
-		700C45B356473791164C82C25E061344 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6BD5FF15CA24458341587DC505A7516B /* Interpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Interpolator.swift; path = Sources/Core/Interpolator.swift; sourceTree = "<group>"; };
+		6F9C1E1524CDCD302DBDDBFE4CFD4F0F /* Smooth-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Smooth-umbrella.h"; sourceTree = "<group>"; };
+		74902B8C183AEABCFFAA4332632B0B90 /* Interpolator+Vector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Interpolator+Vector.swift"; path = "Sources/Core/Interpolator+Vector.swift"; sourceTree = "<group>"; };
 		7674D8A946B21C7F70CC31FDD3949BC7 /* Pods-mindfull WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mindfull WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7A686A3455982A30CD644A27FBF115BF /* VectorHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VectorHelper.swift; path = Sources/Core/VectorHelper.swift; sourceTree = "<group>"; };
 		7F06DD56E37A2DC636D39B0105FB3A98 /* Pods-mindfull-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mindfull-acknowledgements.plist"; sourceTree = "<group>"; };
 		7FEE661D28B82C71C40D25012DBC7BE9 /* Pods-mindfull-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-mindfull-umbrella.h"; sourceTree = "<group>"; };
+		88655EBCB42F9112EB2EE1BE898937EA /* Smooth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Smooth-dummy.m"; sourceTree = "<group>"; };
 		89511474A73D07A78B4EB00FFC9C58E7 /* Pods-mindfull WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mindfull WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		8C4C180EC8FC69E2685423CB83042831 /* Pods-mindfull WatchKit App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-mindfull WatchKit App-umbrella.h"; sourceTree = "<group>"; };
-		8CBFC6CDD6E2297B7A75EB7BCDBFF2CB /* LinearInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinearInterpolator.swift; path = Sources/Core/LinearInterpolator.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A5004676C5EE29483D82C1CE77D9B4FC /* SincFilterInterpolator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SincFilterInterpolator.swift; path = Sources/Core/SincFilterInterpolator.swift; sourceTree = "<group>"; };
 		A5966BB77DA6F9599CF144E096605506 /* Pods-mindfull WatchKit App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mindfull WatchKit App-acknowledgements.plist"; sourceTree = "<group>"; };
 		A5E3A0D56E87F8259CF6D0D43D290A12 /* Pods-mindfull WatchKit App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mindfull WatchKit App-Info.plist"; sourceTree = "<group>"; };
+		A8DA7CB217714DC93E0BCA5AAF2E2EB8 /* Smooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Smooth.release.xcconfig; sourceTree = "<group>"; };
 		AC38C66BB1631D0B800EEE6BB6CC38CB /* Pods-mindfull WatchKit App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mindfull WatchKit App-dummy.m"; sourceTree = "<group>"; };
 		B2903EA053A15F08FBDE970DD17DC875 /* Pods-mindfull-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mindfull-Info.plist"; sourceTree = "<group>"; };
 		BC551031BA7301BB830CBF2631F245F1 /* Pods-mindfull.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mindfull.debug.xcconfig"; sourceTree = "<group>"; };
+		BCB79F901B0ECFF3238071CDDFD4F87B /* Smooth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Smooth.modulemap; sourceTree = "<group>"; };
 		BE9E689B8940E603CD4A126F092581AB /* Pods-mindfull WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mindfull WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
-		C1673F734064001A98A59044DE7F0A87 /* Interpolator+Vector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Interpolator+Vector.swift"; path = "Sources/Core/Interpolator+Vector.swift"; sourceTree = "<group>"; };
+		C1B4C30108C2162EFE25EF650632C124 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C399756521545B7B693AB716768BB20D /* Pods-mindfull WatchKit Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-mindfull WatchKit Extension-umbrella.h"; sourceTree = "<group>"; };
 		C75B0C56A9B0153D93E4A91C41613383 /* Pods-mindfull WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mindfull WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		D1FB9DC8D790D17887E6DEF926D6E538 /* Smooth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Smooth-dummy.m"; sourceTree = "<group>"; };
-		D6BF9AF1AC6BB5597E22FC136683182F /* Smooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Smooth.release.xcconfig; sourceTree = "<group>"; };
 		D7028CA3599DB3AD89A8661CCE67D581 /* Pods-mindfull WatchKit Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-mindfull WatchKit Extension.modulemap"; sourceTree = "<group>"; };
 		D70CE8052B376A56370CD5E80B500472 /* Pods-mindfull WatchKit App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-mindfull WatchKit App.modulemap"; sourceTree = "<group>"; };
+		E90B6C7E3F3D208FF536A80E35F79927 /* VectorHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VectorHelper.swift; path = Sources/Core/VectorHelper.swift; sourceTree = "<group>"; };
+		EE833A484B90569CC1F4B6EA0E3B2ADA /* Smooth.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Smooth.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F1F30DAD8E033BBB38CA6A5FD7BFF774 /* Pods-mindfull.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mindfull.release.xcconfig"; sourceTree = "<group>"; };
 		FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		FEE250B5407D011A5FFCF810DDD6659B /* libPods-mindfull WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mindfull WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,29 +137,26 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		191C0D4002049D50FF5AFBFCBE42DCAF /* Smooth */ = {
+		38A40169FAAD7AF3F5740E00464800EF /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				360D9893667A7CB7A79517AF6A461BA1 /* CubicInterpolator.swift */,
-				5D0C5A504EB7E73968877D36E09099E1 /* Interpolator.swift */,
-				C1673F734064001A98A59044DE7F0A87 /* Interpolator+Vector.swift */,
-				8CBFC6CDD6E2297B7A75EB7BCDBFF2CB /* LinearInterpolator.swift */,
-				A5004676C5EE29483D82C1CE77D9B4FC /* SincFilterInterpolator.swift */,
-				7A686A3455982A30CD644A27FBF115BF /* VectorHelper.swift */,
-				1794654C675718CA637004A2D7D310C9 /* VectorInterpolator.swift */,
-				2F15E73BAFE01E39E353A6D6B9C4879A /* Pod */,
-				A2504F2EADB65EFC23542D3739F5686F /* Support Files */,
+				BCB79F901B0ECFF3238071CDDFD4F87B /* Smooth.modulemap */,
+				88655EBCB42F9112EB2EE1BE898937EA /* Smooth-dummy.m */,
+				458CEF303687FBAFB54DE66927CCE076 /* Smooth-prefix.pch */,
+				6F9C1E1524CDCD302DBDDBFE4CFD4F0F /* Smooth-umbrella.h */,
+				238F1909F927C5CC7D8E97AA2F566F18 /* Smooth.debug.xcconfig */,
+				A8DA7CB217714DC93E0BCA5AAF2E2EB8 /* Smooth.release.xcconfig */,
 			);
-			name = Smooth;
-			path = "/Users/mus/Desktop/mindfullv2/Smooth.swift-master";
-			sourceTree = "<absolute>";
+			name = "Support Files";
+			path = "../Pods/Target Support Files/Smooth";
+			sourceTree = "<group>";
 		};
-		2F15E73BAFE01E39E353A6D6B9C4879A /* Pod */ = {
+		4E24EEAC582D3481E7DCA470E5892AD6 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				589BC8E45B3D6D84ABBCEE9137238EED /* LICENSE */,
-				700C45B356473791164C82C25E061344 /* README.md */,
-				02829D322F45B76C2E033FF5C7C00967 /* Smooth.podspec */,
+				00505D6251A874CF85B2DB608782AFC6 /* LICENSE */,
+				C1B4C30108C2162EFE25EF650632C124 /* README.md */,
+				EE833A484B90569CC1F4B6EA0E3B2ADA /* Smooth.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -182,14 +179,6 @@
 				0AEAACE066E6ECA6DAA00EE2E5A7EF8D /* Pods_mindfull_WatchKit_App.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		81DD2A1D62A7B28C996432D3F046BD5D /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				191C0D4002049D50FF5AFBFCBE42DCAF /* Smooth */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		838F8ED2E48B0E776F33F20EA8F32509 /* Pods-mindfull WatchKit Extension */ = {
@@ -215,20 +204,6 @@
 			name = watchOS;
 			sourceTree = "<group>";
 		};
-		A2504F2EADB65EFC23542D3739F5686F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1BCEEF54F34D34A792D1446BC82849F8 /* Smooth.modulemap */,
-				D1FB9DC8D790D17887E6DEF926D6E538 /* Smooth-dummy.m */,
-				33253A1EFC06621B36D793B78FE558BB /* Smooth-prefix.pch */,
-				6FABF6414D26C5D698DE7127246FEF8C /* Smooth-umbrella.h */,
-				46F006882F0D4A201629D3581EDB0F01 /* Smooth.debug.xcconfig */,
-				D6BF9AF1AC6BB5597E22FC136683182F /* Smooth.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Pods/Target Support Files/Smooth";
-			sourceTree = "<group>";
-		};
 		A31580247FBEA08E3CC785438E5C5741 /* Pods-mindfull WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,11 +224,36 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				81DD2A1D62A7B28C996432D3F046BD5D /* Development Pods */,
+				F917AA273E9D447CF189F21653FE8BAD /* Development Pods */,
 				54CCD06893F300F5B2C02DAFD57093E1 /* Frameworks */,
 				700AB94A39B76FD787B3749262889B9F /* Products */,
 				074608C464528F6E85B4FA70CAEACBF0 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D7679DFAB22712FFCC3D28122133AA21 /* Smooth */ = {
+			isa = PBXGroup;
+			children = (
+				2539B4091D3B52212DF7BA7F0ED7B7F2 /* CubicInterpolator.swift */,
+				6BD5FF15CA24458341587DC505A7516B /* Interpolator.swift */,
+				74902B8C183AEABCFFAA4332632B0B90 /* Interpolator+Vector.swift */,
+				328AF01AF4BBC94E3FE6E8071BFA46D4 /* LinearInterpolator.swift */,
+				511F695CA98BBA466E26EE642E31F25F /* SincFilterInterpolator.swift */,
+				E90B6C7E3F3D208FF536A80E35F79927 /* VectorHelper.swift */,
+				37D8FB1C4C3ED0795F095104E72840FC /* VectorInterpolator.swift */,
+				4E24EEAC582D3481E7DCA470E5892AD6 /* Pod */,
+				38A40169FAAD7AF3F5740E00464800EF /* Support Files */,
+			);
+			name = Smooth;
+			path = "/Users/mus/Desktop/Coding/mindfullv2/Smooth.swift-master";
+			sourceTree = "<absolute>";
+		};
+		F917AA273E9D447CF189F21653FE8BAD /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7679DFAB22712FFCC3D28122133AA21 /* Smooth */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		FC09FCFA9627FD344DC47D4BE9503F53 /* Pods-mindfull */ = {
@@ -801,7 +801,7 @@
 		};
 		7BC2D78EA63CA3805E0AFE3532D10A35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46F006882F0D4A201629D3581EDB0F01 /* Smooth.debug.xcconfig */;
+			baseConfigurationReference = 238F1909F927C5CC7D8E97AA2F566F18 /* Smooth.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -825,7 +825,7 @@
 		};
 		87FC5AD1DE5788231624C53AB9387856 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6BF9AF1AC6BB5597E22FC136683182F /* Smooth.release.xcconfig */;
+			baseConfigurationReference = A8DA7CB217714DC93E0BCA5AAF2E2EB8 /* Smooth.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

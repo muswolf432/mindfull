@@ -18,6 +18,9 @@ struct WorkoutView: View {
     @State private var SR = 1.0
     @State private var offsetCopies = false // Offset breathing circles
     
+    @EnvironmentObject var bleManager: BLEManager
+
+    
     var body: some View {
         
         
@@ -66,8 +69,9 @@ struct WorkoutView: View {
             }
             
             VStack {
-                Text(String(format: "HRV: %.0f ms", workoutSession.SDNNScore))
-                Text(String(format: "avgHRV: %.0f ms", workoutSession.avgHRV))
+                Text(String(format: "HRV: %.0f ms", workoutSession.SDNNScore > 1 ? workoutSession.SDNNScore : workoutSession.avgSDNN))
+//                Text(String(format: "avgHRV: %.0f ms", workoutSession.avgHRV))
+                Text("\(bleManager.blBPM)")
                 Spacer()
             }
 

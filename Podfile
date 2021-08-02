@@ -22,7 +22,7 @@ target 'mindfull WatchKit Extension' do
   #use_frameworks!
 
   # Pods for mindfull WatchKit Extension
-  pod 'Smooth' , :path => '/Users/mus/Desktop/mindfullv2/Smooth.swift-master'
+  pod 'Smooth' , :path => '/Users/mus/Desktop/Coding/mindfullv2/Smooth.swift-master'
 
 
 end

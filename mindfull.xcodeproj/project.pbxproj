@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0649D50215469F8C02C88D5B /* Pods_mindfull.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C61F7A579879A4C81124BCF /* Pods_mindfull.framework */; };
 		7614EB35BAE4917AA88B5B21 /* libPods-mindfull WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 227A5053FBF7D22874725C46 /* libPods-mindfull WatchKit Extension.a */; };
+		C6490D56268E016A00769968 /* BLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6490D55268E016A00769968 /* BLManager.swift */; };
 		C6EBDDC9265BE125002FF495 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EBDDC8265BE124002FF495 /* WorkoutView.swift */; };
 		E0EDD7982489AB53002FF6D7 /* mindfull WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E0EDD7972489AB53002FF6D7 /* mindfull WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E0EDD79D2489AB54002FF6D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD79C2489AB54002FF6D7 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		8683155AF4E02EA75A5520DB /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		A5B52331D7BED7B8AB53370A /* Pods-mindfull WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mindfull WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-mindfull WatchKit Extension/Pods-mindfull WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		B36DA155A8FF9DDF7C1F5612 /* Pods-mindfull.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mindfull.release.xcconfig"; path = "Target Support Files/Pods-mindfull/Pods-mindfull.release.xcconfig"; sourceTree = "<group>"; };
+		C6490D55268E016A00769968 /* BLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLManager.swift; sourceTree = "<group>"; };
 		C6EBDDC8265BE124002FF495 /* WorkoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		CDB553C64BBBFD14B1BF8C20 /* Pods-mindfull WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mindfull WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-mindfull WatchKit App/Pods-mindfull WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		E0EDD7932489AB52002FF6D7 /* mindfull.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mindfull.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				E0EDD7AA2489AB54002FF6D7 /* mindfullApp.swift */,
+				C6490D55268E016A00769968 /* BLManager.swift */,
 				E0EDD7A82489AB54002FF6D7 /* ContentView.swift */,
 				E0EDD7D02489B113002FF6D7 /* StartView.swift */,
 				E0EDD7CE2489B0C4002FF6D7 /* PagingView.swift */,
@@ -451,6 +454,7 @@
 				E0EDD7A92489AB54002FF6D7 /* ContentView.swift in Sources */,
 				E0EDD7C52489AE71002FF6D7 /* WorkoutManager.swift in Sources */,
 				C6EBDDC9265BE125002FF495 /* WorkoutView.swift in Sources */,
+				C6490D56268E016A00769968 /* BLManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "mindfull WatchKit Extension/Supporting Files/mindfull WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"mindfull WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = X3Y884DY82;
@@ -607,7 +612,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Debug;
 		};
@@ -617,6 +622,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "mindfull WatchKit Extension/Supporting Files/mindfull WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"mindfull WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = X3Y884DY82;
@@ -634,7 +640,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};
@@ -645,6 +651,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X3Y884DY82;
 				IBSC_MODULE = SpeedySloth_WatchKit_Extension;
@@ -656,7 +663,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Debug;
 		};
@@ -667,6 +674,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X3Y884DY82;
 				IBSC_MODULE = SpeedySloth_WatchKit_Extension;
@@ -678,7 +686,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};
@@ -686,6 +694,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE329F169D318B4B8B30EF47 /* Pods-mindfull.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X3Y884DY82;
@@ -702,6 +711,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B36DA155A8FF9DDF7C1F5612 /* Pods-mindfull.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X3Y884DY82;

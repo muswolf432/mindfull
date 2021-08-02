@@ -11,21 +11,39 @@ import Combine
 struct StartView: View {
     
     @EnvironmentObject var workoutSession: WorkoutManager
+    @EnvironmentObject var bleManager: BLEManager
+
     
     let startAction: (() -> Void)? // The start action callback.
     
+    
+    
     var body: some View {
         VStack {
+            ZStack {
+            Rectangle()
+                .cornerRadius(0)
+                .foregroundColor(bleManager.isConnected ? Color.green : Color.blue )
+                .cornerRadius(30)
+                .scaledToFit()
+                Text(bleManager.isConnected ? "\(bleManager.peripheralName) \(bleManager.blBPM)" : "Searching")
+
+            }
+
         RunButton(action: {
             self.startAction!() // FixMe!
         }).onAppear() {
             // Request HealthKit store authorization.
             self.workoutSession.requestAuthorization()
             // Pull avg HRV
-            workoutSession.getHRVAverage()
+            self.workoutSession.getHRVAverage()
+            self.workoutSession.setup(self.bleManager)
+            
         }
-        // The HRV
-        Text("Average HRV: \(workoutSession.avgHRV, specifier: "%.0f") ms")
+        
+//         The HRV
+        Text("Today's HRV: \(workoutSession.avgHRV, specifier: "%.0f") ms")
+        Text("Last session: \(workoutSession.avgSDNN, specifier: "%.0f") ms")
         }
     }
 }

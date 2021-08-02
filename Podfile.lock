@@ -2,15 +2,15 @@ PODS:
   - Smooth (0.1.1)
 
 DEPENDENCIES:
-  - Smooth (from `/Users/mus/Desktop/mindfullv2/Smooth.swift-master`)
+  - Smooth (from `/Users/mus/Desktop/Coding/mindfullv2/Smooth.swift-master`)
 
 EXTERNAL SOURCES:
   Smooth:
-    :path: "/Users/mus/Desktop/mindfullv2/Smooth.swift-master"
+    :path: "/Users/mus/Desktop/Coding/mindfullv2/Smooth.swift-master"
 
 SPEC CHECKSUMS:
   Smooth: 39f075995840da769facfc585bf25ce8eceea83c
 
-PODFILE CHECKSUM: 8c31518c4611073dc34daa824af49aa386d41b6c
+PODFILE CHECKSUM: 573d838808efd847d3065aaba30ab842642619b7
 
 COCOAPODS: 1.10.1
